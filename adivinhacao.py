@@ -1,8 +1,9 @@
 from random import randint
 
 def jogar():
+    logo = "Jogo de Adivinhação"
     print("-=" * 30)
-    print(" " * 17, "JOGO DE ADIVINHAÇÂO")
+    print(f"{logo:^30}")
     print("-=" * 30)
     cont = 0
     numerosecreto = randint(0, 10)
