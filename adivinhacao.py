@@ -30,3 +30,5 @@ def jogar():
         else:
             print("O valor digitado, é menor que o numero secreto!")
     print("FIM JOGO !!!")
+if __name__ == "__main__":
+    jogar()

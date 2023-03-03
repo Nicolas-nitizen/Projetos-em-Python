@@ -7,8 +7,7 @@ print("*" * 30)
 print(f'{logo:^30}')
 print('*' * 30)
 
-print("(1) - Forca\n"
-      "(2) - Adivinhação")
+print("(1) - Forca\n(2) - Adivinhação")
 
 jogo = int(input("Qual jogo você escolhe: "))
 
