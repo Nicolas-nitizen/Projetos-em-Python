@@ -8,8 +8,9 @@ def abertura():
 def jogar():
     abertura()
 
-    palavra_secreta = "banana"
-    letras_acertadas = ["_", "_", "_", "_", "_", "_"]
+
+    palavra_secreta = open("palavras.txt", "a")
+    letras_acertadas = ["_" for l in palavra_secreta]
 
     enforcou = False
     acertou = False
