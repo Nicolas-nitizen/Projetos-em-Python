@@ -4,21 +4,28 @@ def abertura():
     print("=" * 30)
     print(f"{logo_tipo:^30}")
     print("=" * 30)
-def abrindoarquivo(palavras):
+def abrindoarquivo():
 
     with open("palavras.txt", 'r') as arquivo:
+        palavras = []
         for linha in arquivo:
             linha = linha.strip()
             palavras.append(linha)
+            pos_palavras = randint(0, len(palavras))
+            palavra_secreta = palavras[pos_palavras].lower()
+            return palavra_secreta
+
+
+def inicializar_letras_acertadas(palavra_secreta):
+    return ["_" for letra in palavra_secreta]
+
+
 def jogar():
     abertura()
 
-    palavras = []
-    abrindoarquivo(palavras)
+    palavra_secreta = abrindoarquivo()
 
-    pos_palavras = randint(0, len(palavras))
-    palavra_secreta = palavras[pos_palavras].lower()
-    letras_acertadas = ["_" for l in palavra_secreta]
+    letras_acertadas = inicializar_letras_acertadas(palavra_secreta)
 
     enforcou = False
     acertou = False
