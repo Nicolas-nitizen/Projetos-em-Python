@@ -8,20 +8,21 @@ def abertura():
 def jogar():
     abertura()
 
-    arquivo = open("palavras.txt", "a")
     palavras = []
-    for linha in arquivo:
-        linha = linha.lower().strip()
-        palavras.append(linha)
-    arquivo.close()
+    with open("palavras.txt", 'r') as arquivo:
+        for linha in arquivo:
+            linha = linha.strip()
+            palavras.append(linha)
 
     pos_palavras = randint(0, len(palavras))
-    palavra_secreta = palavras[pos_palavras]
+    palavra_secreta = palavras[pos_palavras].lower()
     letras_acertadas = ["_" for l in palavra_secreta]
 
     enforcou = False
     acertou = False
     erros = 0
+
+    print(letras_acertadas)
 
     #enquato nao enforcou e nao aceitou - no caso as duas variaveis enforcou e acertou é True
     while not enforcou and not acertou:
