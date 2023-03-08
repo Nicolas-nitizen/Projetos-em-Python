@@ -4,15 +4,17 @@ def abertura():
     print("=" * 30)
     print(f"{logo_tipo:^30}")
     print("=" * 30)
+def abrindoarquivo(palavras):
 
-def jogar():
-    abertura()
-
-    palavras = []
     with open("palavras.txt", 'r') as arquivo:
         for linha in arquivo:
             linha = linha.strip()
             palavras.append(linha)
+def jogar():
+    abertura()
+
+    palavras = []
+    abrindoarquivo(palavras)
 
     pos_palavras = randint(0, len(palavras))
     palavra_secreta = palavras[pos_palavras].lower()
