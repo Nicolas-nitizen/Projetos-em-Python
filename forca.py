@@ -8,8 +8,15 @@ def abertura():
 def jogar():
     abertura()
 
+    arquivo = open("palavras.txt", "a")
+    palavras = []
+    for linha in arquivo:
+        linha = linha.lower().strip()
+        palavras.append(linha)
+    arquivo.close()
 
-    palavra_secreta = open("palavras.txt", "a")
+    pos_palavras = randint(0, len(palavras))
+    palavra_secreta = palavras[pos_palavras]
     letras_acertadas = ["_" for l in palavra_secreta]
 
     enforcou = False
