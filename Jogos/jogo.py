@@ -1,6 +1,5 @@
 from time import sleep
-import adivinhacao
-import forca
+from Jogos import adivinhacao, forca
 
 logo = "Escolhe o seu jogo!"
 print("*" * 30)
